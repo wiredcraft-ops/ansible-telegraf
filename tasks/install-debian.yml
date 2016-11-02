@@ -1,0 +1,5 @@
+---
+- name: Install Telegraf from URL [Debian/Ubuntu]
+  apt:
+    deb: https://dl.influxdata.com/telegraf/releases/telegraf_{{ telegraf_version }}_{{ telegraf_debian_arch }}.deb
+    state: present

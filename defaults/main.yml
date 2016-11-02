@@ -1,4 +1,8 @@
 ---
+telegraf_redhat_arch: x86_64
+telegraf_debian_arch: amd64
+
+# CONFIG
 telegraf_tags:
   #- key: value
 
