@@ -1,0 +1,21 @@
+---
+- name: Install telegraf
+  yum:
+    name=https://dl.influxdata.com/telegraf/releases/telegraf-{{telegraf_version}}.{{telegraf_arch}}.rpm
+    state=present
+
+- name: Create telegraf.conf
+  template:
+    src=telegraf.conf.j2
+    dest=/etc/telegraf/telegraf.conf
+    backup=true
+
+- name: Start telegraf
+  service:
+    name=telegraf
+    state=started
+
+- name: Enable telegraf
+  service:
+    name=telegraf
+    enabled=true

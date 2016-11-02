@@ -1,0 +1,48 @@
+---
+telegraf_tags:
+  #- key: value
+
+# [agent]
+telegraf_agent_interval: 10s
+telegraf_agent_round_interval: true
+telegraf_agent_metric_batch_size: 1000
+telegraf_agent_metric_buffer_limit: 10000
+telegraf_agent_collection_jitter: 0s
+telegraf_agent_flush_interval: 10s
+telegraf_agent_flush_jitter: 0s
+telegraf_agent_precision: 
+telegraf_agent_debug: false
+telegraf_agent_quiet: false
+telegraf_agent_hostname: 
+telegraf_agent_omit_hostname: false
+
+## OUTPUT PLUGINS
+
+# [outputs.influxdb]
+telegraf_outputs_influxdb_urls:
+  - 'http://localhost:8086'
+telegraf_outputs_influxdb_database: telegraf
+telegraf_outputs_influxdb_retention_policy: 
+telegraf_outputs_influxdb_write_consistency: any
+telegraf_outputs_influxdb_timeout: 5s
+telegraf_outputs_influxdb_username: 
+telegraf_outputs_influxdb_password:
+telegraf_outputs_influxdb_user_agent: telegraf
+telegraf_outputs_influxdb_udp_playload: 512
+telegraf_outputs_influxdb_ssl_ca: /etc/telegraf/ca.pem
+telegraf_outputs_influxdb_ssl_cert: /etc/telegraf/cert.pem
+telegraf_outputs_influxdb_ssl_key: /etc/telegraf/key.pem
+telegraf_outputs_influxdb_insecure_skip_verify: false
+
+## INPUT PLUGINS
+
+# [inputs.cpu]
+telegraf_inputs_cpu_percpu: true
+telegraf_inputs_cpu_totalcpu: true
+telegraf_inputs_cpu_fielddrop:
+  - 'time_*'
+
+# [inputs.disk]
+telegraf_inputs_disk_ignore_fs:
+  - tmpfs
+  - devtmpfs
