@@ -16,7 +16,6 @@ telegraf_version: 1.0.1 #telegraf version number
 #default/main.yml
 #...
 ```
-
 ### Dependencies
 
 ### Example Playbook
