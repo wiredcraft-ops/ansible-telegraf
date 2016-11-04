@@ -4,8 +4,10 @@
     src: telegraf.conf.j2
     dest: /etc/telegraf/telegraf.conf
     backup: true
+  notify:
+    - Restart telegraf
 
-- name: Start and Enable Telegraf
+- name: Start and Enable telegraf
   service:
     name: telegraf
     state: started
