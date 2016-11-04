@@ -1,5 +1,5 @@
 ---
-telegraf_arch: "{% if ansible_os_family == 'RedHat' %}x86_64{% elseif ansible_os_family == 'Debian' %}amd64{% endif %}"
+telegraf_arch: "{% if ansible_os_family == 'RedHat' %}x86_64{% elif ansible_os_family == 'Debian' %}amd64{% endif %}"
 
 # CONFIG
 telegraf_tags:
@@ -7,17 +7,17 @@ telegraf_tags:
 
 # [agent]
 telegraf_agent_interval: 10s
-telegraf_agent_round_interval: true
+telegraf_agent_round_interval: "true"
 telegraf_agent_metric_batch_size: 1000
 telegraf_agent_metric_buffer_limit: 10000
 telegraf_agent_collection_jitter: 0s
 telegraf_agent_flush_interval: 10s
 telegraf_agent_flush_jitter: 0s
 telegraf_agent_precision: 
-telegraf_agent_debug: false
-telegraf_agent_quiet: false
+telegraf_agent_debug: "false"
+telegraf_agent_quiet: "false"
 telegraf_agent_hostname: 
-telegraf_agent_omit_hostname: false
+telegraf_agent_omit_hostname: "false"
 
 ## OUTPUT PLUGINS
 
@@ -35,13 +35,13 @@ telegraf_outputs_influxdb_udp_playload: 512
 telegraf_outputs_influxdb_ssl_ca: /etc/telegraf/ca.pem
 telegraf_outputs_influxdb_ssl_cert: /etc/telegraf/cert.pem
 telegraf_outputs_influxdb_ssl_key: /etc/telegraf/key.pem
-telegraf_outputs_influxdb_insecure_skip_verify: false
+telegraf_outputs_influxdb_insecure_skip_verify: "false"
 
 ## INPUT PLUGINS
 
 # [inputs.cpu]
-telegraf_inputs_cpu_percpu: true
-telegraf_inputs_cpu_totalcpu: true
+telegraf_inputs_cpu_percpu: "true"
+telegraf_inputs_cpu_totalcpu: "true"
 telegraf_inputs_cpu_fielddrop:
   - 'time_*'
 

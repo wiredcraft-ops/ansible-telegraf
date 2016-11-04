@@ -16,7 +16,6 @@ Vagrant.configure("2") do |config|
       end
 
       if machine_id == BOX_COUNT
-
         machine.vm.provision "ansible" do |ansible|
           ansible.sudo = true
           ansible.playbook = "test.yml"

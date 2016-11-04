@@ -7,6 +7,18 @@
 
 `ansible-galaxy install xuqingfeng.telegraf -p roles`
 
+### Role Variables
+
+### Dependencies
+
+### Example Playbook
+
+```yaml
+- hosts: server
+  roles:
+    - xuqingfeng.telegraf
+```
+
 
 
 
