@@ -82,8 +82,8 @@
   ## this means that only ONE of the urls will be written to each interval.
   # urls = ["udp://localhost:8089"] # UDP endpoint example
   #urls = ["http://localhost:8086"] # required
-  {% if telegraf_outputs_influxdb_urls is defined %}
-  urls = ["{{ telegraf_outputs_influxdb_urls | join(",") }}"]
+  {% if telegraf_outputs_influxdb_urls is defined and telegraf_outputs_influxdb_urls != None %}
+  urls = ["{{ telegraf_outputs_influxdb_urls | join('", "') }}"]
   {% endif %}
   ## The target database for metrics (telegraf will create it if not exists).
   database = "{{ telegraf_outputs_influxdb_database }}" # required
@@ -423,8 +423,8 @@
   totalcpu = {{ telegraf_inputs_cpu_totalcpu }}
   ## Comment this line if you want the raw CPU time metrics
   #fielddrop = ["time_*"]
-  {% if telegraf_inputs_cpu_fielddrop is defined %}
-  fielddrop = ["{{ telegraf_inputs_cpu_fielddrop | join(",") }}"]
+  {% if telegraf_inputs_cpu_fielddrop is defined and telegraf_inputs_cpu_fielddrop != None %}
+  fielddrop = ["{{ telegraf_inputs_cpu_fielddrop | join('", "') }}"]
   {% endif %}
 
 
@@ -437,8 +437,8 @@
   ## Ignore some mountpoints by filesystem type. For example (dev)tmpfs (usually
   ## present on /run, /var/run, /dev/shm or /dev).
   #ignore_fs = ["tmpfs", "devtmpfs"]
-  {% if telegraf_inputs_disk_ignore_fs is defined %}
-  ignore_fs = ["{{ telegraf_inputs_disk_ignore_fs | join(",") }}"]
+  {% if telegraf_inputs_disk_ignore_fs is defined and telegraf_inputs_disk_ignore_fs != None %}
+  ignore_fs = ["{{ telegraf_inputs_disk_ignore_fs | join('", "') }}"]
   {% endif %}
 
 
