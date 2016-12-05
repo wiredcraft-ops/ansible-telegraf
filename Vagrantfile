@@ -6,7 +6,7 @@ Vagrant.configure("2") do |config|
 
   BOX_COUNT = 1
   (1..BOX_COUNT).each do | machine_id |
-    config.vm.define "telegraf#{machine_id}" do | machine |
+    config.vm.define "telegraf-#{machine_id}" do | machine |
       machine.vm.hostname = "telegraf-#{machine_id}"
       machine.vm.network "private_network", ip: "10.0.233.#{1+machine_id}"
 
