@@ -1,9 +1,9 @@
 ---
+telegraf_version: 1.0.1
 telegraf_arch: "{% if ansible_os_family == 'RedHat' %}x86_64{% elif ansible_os_family == 'Debian' %}amd64{% endif %}"
 
 # CONFIG
-telegraf_tags:
-  #- key: value
+telegraf_tags: []
 
 # [agent]
 telegraf_agent_interval: 10s
@@ -22,8 +22,7 @@ telegraf_agent_omit_hostname: 'false'
 ## OUTPUT PLUGINS
 
 # [outputs.influxdb]
-telegraf_outputs_influxdb_urls:
-  - 'http://localhost:8086'
+telegraf_outputs_influxdb_urls: ['http://localhost:8086']
 telegraf_outputs_influxdb_database: telegraf
 telegraf_outputs_influxdb_retention_policy: 
 telegraf_outputs_influxdb_write_consistency: any
@@ -42,10 +41,7 @@ telegraf_outputs_influxdb_insecure_skip_verify: 'false'
 # [inputs.cpu]
 telegraf_inputs_cpu_percpu: 'true'
 telegraf_inputs_cpu_totalcpu: 'true'
-telegraf_inputs_cpu_fielddrop:
-  - 'time_*'
+telegraf_inputs_cpu_fielddrop: ['time_*']
 
 # [inputs.disk]
-telegraf_inputs_disk_ignore_fs:
-  - tmpfs
-  - devtmpfs
+telegraf_inputs_disk_ignore_fs: ['tmpfs', 'devtmpfs']

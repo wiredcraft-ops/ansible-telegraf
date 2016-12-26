@@ -11,12 +11,11 @@
 
 ```yaml
 #vars/main.yml
-telegraf_version: 1.0.1 #telegraf version number
+telegraf_version: 1.1.2 #telegraf version number; get from https://www.influxdata.com/downloads/
 
 #default/main.yml
 #...
 ```
-### Dependencies
 
 ### Example Playbook
 
@@ -26,7 +25,9 @@ telegraf_version: 1.0.1 #telegraf version number
     - xuqingfeng.telegraf
 ```
 
+### Docker
 
+[https://github.com/influxdata/influxdata-docker/tree/master/telegraf](https://github.com/influxdata/influxdata-docker/tree/master/telegraf)
 
 
 
