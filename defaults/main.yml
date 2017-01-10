@@ -1,9 +1,9 @@
 ---
-telegraf_version: 1.0.1
+telegraf_version: 1.1.1
 telegraf_arch: "{% if ansible_os_family == 'RedHat' %}x86_64{% elif ansible_os_family == 'Debian' %}amd64{% endif %}"
 
 # CONFIG
-telegraf_tags: []
+telegraf_global_tags: []
 
 # [agent]
 telegraf_agent_interval: 10s
@@ -41,7 +41,7 @@ telegraf_outputs_influxdb_insecure_skip_verify: 'false'
 # [inputs.cpu]
 telegraf_inputs_cpu_percpu: 'true'
 telegraf_inputs_cpu_totalcpu: 'true'
-telegraf_inputs_cpu_fielddrop: ['time_*']
+telegraf_inputs_cpu_collect_cpu_time: 'false'
 
 # [inputs.disk]
 telegraf_inputs_disk_ignore_fs: ['tmpfs', 'devtmpfs']
