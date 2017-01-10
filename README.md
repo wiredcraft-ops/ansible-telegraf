@@ -22,7 +22,7 @@ telegraf_version: 1.1.2 #telegraf version number; get from https://www.influxdat
 ```yaml
 - hosts: server
   roles:
-    - xuqingfeng.telegraf
+    - role: xuqingfeng.telegraf
 ```
 
 ### Docker

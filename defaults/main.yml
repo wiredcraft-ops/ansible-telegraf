@@ -44,4 +44,5 @@ telegraf_inputs_cpu_totalcpu: 'true'
 telegraf_inputs_cpu_collect_cpu_time: 'false'
 
 # [inputs.disk]
+telegraf_inputs_disk_mount_points: []
 telegraf_inputs_disk_ignore_fs: ['tmpfs', 'devtmpfs']
