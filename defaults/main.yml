@@ -31,9 +31,9 @@ telegraf_outputs_influxdb_username:
 telegraf_outputs_influxdb_password:
 telegraf_outputs_influxdb_user_agent: telegraf
 telegraf_outputs_influxdb_udp_playload: 512
-telegraf_outputs_influxdb_ssl_ca: /etc/telegraf/ca.pem
-telegraf_outputs_influxdb_ssl_cert: /etc/telegraf/cert.pem
-telegraf_outputs_influxdb_ssl_key: /etc/telegraf/key.pem
+telegraf_outputs_influxdb_ssl_ca:
+telegraf_outputs_influxdb_ssl_cert:
+telegraf_outputs_influxdb_ssl_key:
 telegraf_outputs_influxdb_insecure_skip_verify: 'false'
 
 ## INPUT PLUGINS
