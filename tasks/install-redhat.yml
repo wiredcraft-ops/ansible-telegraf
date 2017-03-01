@@ -1,5 +1,5 @@
 ---
-- name: Install telegraf from URL [RHEL/CentOS]
+- name: Telegraf | Install telegraf from URL [RHEL/CentOS]
   yum:
     name: https://dl.influxdata.com/telegraf/releases/telegraf-{{telegraf_version}}.{{telegraf_arch}}.rpm
     state: present

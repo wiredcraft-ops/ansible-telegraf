@@ -1,13 +1,15 @@
 ---
-- name: Create telegraf.conf
+- name: Telegraf | Create telegraf.conf
   template:
-    src: telegraf.conf.j2
+    src: telegraf.conf
     dest: /etc/telegraf/telegraf.conf
     backup: true
+    owner: telegraf
+    group: telegraf
   notify:
     - Restart telegraf
 
-- name: Start and Enable telegraf
+- name: Telegraf | Start and Enable telegraf
   service:
     name: telegraf
     state: started

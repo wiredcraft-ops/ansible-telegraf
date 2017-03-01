@@ -11,11 +11,13 @@
 
 ```yaml
 #vars/main.yml
-telegraf_version: 1.1.2 #telegraf version number; get from https://www.influxdata.com/downloads/
+telegraf_version: 1.2 #telegraf version number; get from https://www.influxdata.com/downloads/
 
 #default/main.yml
 #...
 ```
+
+**Full config [here](https://github.com/influxdata/telegraf/blob/master/etc/telegraf.conf)**
 
 ### Example Playbook
 

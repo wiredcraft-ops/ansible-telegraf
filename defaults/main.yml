@@ -1,5 +1,5 @@
 ---
-telegraf_version: 1.1.1
+telegraf_version: 1.2
 telegraf_arch: "{% if ansible_os_family == 'RedHat' %}x86_64{% elif ansible_os_family == 'Debian' %}amd64{% endif %}"
 
 # CONFIG
@@ -50,3 +50,5 @@ telegraf_inputs_disk_ignore_fs: ['tmpfs', 'devtmpfs']
 # [inputs.diskio]
 telegraf_inputs_diskio_devices: []
 telegraf_inputs_diskio_skip_serial_number: 'true'
+
+# use /etc/telegraf/telegraf.d for more specific usages
