@@ -52,3 +52,6 @@ telegraf_inputs_diskio_devices: []
 telegraf_inputs_diskio_skip_serial_number: 'true'
 
 # use /etc/telegraf/telegraf.d for more specific usages
+
+# /.../*.conf
+telegraf_custom_config_files: []
