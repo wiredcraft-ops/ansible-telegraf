@@ -15,7 +15,7 @@
     dest: /etc/telegraf/telegraf.d/
     owner: telegraf
     group: telegraf
-  with_filegolb: "{{ telegraf_custom_config_files }}"
+  with_fileglob: "{{ telegraf_custom_config_files }}"
   notify:
     - Restart telegraf
 
