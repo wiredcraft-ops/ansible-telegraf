@@ -10,10 +10,8 @@
 ### Role Variables
 
 ```yaml
-#vars/main.yml
-telegraf_version: 1.2.1 #telegraf version number; get from https://www.influxdata.com/downloads/
-
 #default/main.yml
+telegraf_version: 1.2.1 #telegraf version number; get from https://www.influxdata.com/downloads/
 #...
 ```
 
@@ -25,7 +23,7 @@ telegraf_version: 1.2.1 #telegraf version number; get from https://www.influxdat
 - hosts: server
   roles:
     - role: xuqingfeng.telegraf
-      telegraf_custom_config_files: ["/etc/telegraf/telegraf.d/*.conf"]
+      telegraf_custom_config_files: ["/CUSTOM_TELEGRAF_CONFIG_FILES/*.conf"]
 ```
 
 ### Docker
