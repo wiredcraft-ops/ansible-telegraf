@@ -22,19 +22,20 @@ telegraf_agent_omit_hostname: 'false'
 ## OUTPUT PLUGINS
 
 # [[outputs.influxdb]]
-telegraf_outputs_influxdb_urls: ['http://localhost:8086']
-telegraf_outputs_influxdb_database: telegraf
-telegraf_outputs_influxdb_retention_policy: 
-telegraf_outputs_influxdb_write_consistency: any
-telegraf_outputs_influxdb_timeout: 5s
-telegraf_outputs_influxdb_username: 
-telegraf_outputs_influxdb_password:
-telegraf_outputs_influxdb_user_agent: telegraf
-telegraf_outputs_influxdb_udp_playload: 512
-telegraf_outputs_influxdb_ssl_ca:
-telegraf_outputs_influxdb_ssl_cert:
-telegraf_outputs_influxdb_ssl_key:
-telegraf_outputs_influxdb_insecure_skip_verify: 'false'
+telegraf_outputs_influxdb:
+  - urls: ['http://localhost:8086']
+    database: telegraf
+    retention_policy:
+    write_consistency: any
+    timeout: 5s
+    username:
+    password:
+    user_agent: telegraf
+    udp_playload: 512
+    ssl_ca:
+    ssl_cert:
+    ssl_key:
+    insecure_skip_verify: 'false'
 
 ## INPUT PLUGINS
 
