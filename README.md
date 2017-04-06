@@ -1,18 +1,25 @@
 ## Ansible-Telegraf
 > an ansible role to install, configure and manage [Telegraf](https://www.influxdata.com/time-series-platform/telegraf/)
 
-[![xuqingfeng.telegraf](https://img.shields.io/badge/role-xuqingfeng.telegraf-blue.svg?style=flat-square)](https://galaxy.ansible.com/xuqingfeng/telegraf/)
-
 ### Installation
 
-`ansible-galaxy install xuqingfeng.telegraf -p roles`
+```
+# requirements.yml
+- src: https://github.com/wiredcraft-ops/ansible-telegraf.git
+  name: wcl-telegraf
+  version: master
+```
+
+```bash
+ansible-galaxy install -r requirements.yml -p roles
+```
 
 ### Role Variables
 
 ```yaml
-#default/main.yml
-telegraf_version: 1.2.1 #telegraf version number; get from https://www.influxdata.com/downloads/
-#...
+# default/main.yml
+telegraf_version: 1.2.1 # telegraf version number; get from https://www.influxdata.com/downloads/
+# ...
 ```
 
 **Full config [here](https://github.com/influxdata/telegraf/blob/master/etc/telegraf.conf)**
@@ -22,7 +29,7 @@ telegraf_version: 1.2.1 #telegraf version number; get from https://www.influxdat
 ```yaml
 - hosts: server
   roles:
-    - role: xuqingfeng.telegraf
+    - role: wcl-telegraf
       telegraf_custom_config_files: ["/CUSTOM_TELEGRAF_CONFIG_FILES/*.conf"]
 ```
 
