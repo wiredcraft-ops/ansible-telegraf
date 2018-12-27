@@ -9,6 +9,12 @@
   notify:
     - Restart telegraf
 
+- name: Get services facts
+  service_facts:
+
+- include: configure-docker.yml
+  when: "'docker.service' in services"
+
 - name: Telegraf | Add custom config to telegraf.d
   copy:
     src: "{{ item }}"
