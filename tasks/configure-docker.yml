@@ -1,0 +1,13 @@
+---
+- name: Add telegraf user to docker group
+  user:
+    name: telegraf
+    groups: docker
+    append: yes
+
+- name: Add telegraf config for docker
+  template:
+    src: telegraf.d/docker.conf
+    dest: /etc/telegraf/telegraf.d/
+  notify:
+    - Restart telegraf
