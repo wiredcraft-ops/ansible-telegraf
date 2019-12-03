@@ -1,5 +1,5 @@
 ---
-telegraf_version: 1.5.2-1
+telegraf_version: 1.12.6-1
 telegraf_arch: "{% if ansible_os_family == 'RedHat' %}x86_64{% elif ansible_os_family == 'Debian' %}amd64{% endif %}"
 
 # CONFIG
