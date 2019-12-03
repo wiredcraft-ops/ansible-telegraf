@@ -1,13 +1,32 @@
 ---
-- name: Telegraf | Create telegraf.conf
+- name: Get python version of admin server
+  setup:
+    filter: ansible_python_version
+  register: python_version
+  delegate_to: 127.0.0.1
+  become: false
+
+- name: Telegraf | Create telegraf.conf (in Python 2)
   template:
     src: telegraf.conf
-    dest: /etc/telegraf/telegraf.conf
+    dest: /etc/telegraf/telegraf-with-python2.conf
     backup: true
     owner: telegraf
     group: telegraf
   notify:
     - Restart telegraf
+  when: python_version['ansible_facts']['ansible_python_version'] is version('3.0', '<')
+
+- name: Telegraf | Create telegraf.conf (in Python 3)
+  template:
+    src: telegraf.conf
+    dest: /etc/telegraf/telegraf-with-python2.conf
+    backup: true
+    owner: telegraf
+    group: telegraf
+  notify:
+    - Restart telegraf
+  when: python_version['ansible_facts']['ansible_python_version'] is version('3.0', '>=')
 
 - name: Get services facts
   service_facts:
