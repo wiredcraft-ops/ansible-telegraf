@@ -8,8 +8,8 @@
 
 - name: Telegraf | Create telegraf.conf (in Python 2)
   template:
-    src: telegraf.conf
-    dest: /etc/telegraf/telegraf-with-python2.conf
+    src: telegraf-with-python2.conf
+    dest: /etc/telegraf/telegraf.conf
     backup: true
     owner: telegraf
     group: telegraf
@@ -20,7 +20,7 @@
 - name: Telegraf | Create telegraf.conf (in Python 3)
   template:
     src: telegraf.conf
-    dest: /etc/telegraf/telegraf-with-python2.conf
+    dest: /etc/telegraf/telegraf.conf
     backup: true
     owner: telegraf
     group: telegraf
